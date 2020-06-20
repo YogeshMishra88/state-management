@@ -7,6 +7,9 @@ import { EmployeeAddComponent } from './employees/employee-add/employee-add.comp
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 import { PageNotFoundComponent } from './employees/page-not-found/page-not-found.component';
 
+import {StoreModule} from '@ngrx/store';
+import {employeeReducer} from './../reducers/employee.reducer';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +19,10 @@ import { PageNotFoundComponent } from './employees/page-not-found/page-not-found
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({
+      employee:employeeReducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
