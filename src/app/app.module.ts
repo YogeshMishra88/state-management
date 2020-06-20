@@ -9,7 +9,7 @@ import { PageNotFoundComponent } from './employees/page-not-found/page-not-found
 
 import {StoreModule} from '@ngrx/store';
 import {employeeReducer} from './../reducers/employee.reducer';
-
+import {ReactiveFormsModule,FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +22,9 @@ import {employeeReducer} from './../reducers/employee.reducer';
     AppRoutingModule,
     StoreModule.forRoot({
       employee:employeeReducer
-    })
+    }),
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

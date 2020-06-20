@@ -29,24 +29,24 @@
     <div class="modal-content">
       <span class="close" (click)="closePopup()">&times;</span>
       <h2>Create Employee</h2>
-      <form >
+      <form [formGroup]="userForm" (ngSubmit)="submitForm()">
       <div class="form-group">
         <label for="uname">Name:</label>
-        <input type="text" class="form-control" placeholder="Enter username" name="uname">
+        <input type="text" class="form-control" placeholder="Enter Name" formControlName="name">
       </div>
       <div class="form-group">
         <label for="uname">Email:</label>
-        <input type="text" class="form-control" placeholder="Enter username" name="email">
+        <input type="text" class="form-control" placeholder="Enter Email" formControlName="email">
       </div>
       <div class="form-group">
         <label for="uname">Contact No:</label>
-        <input type="text" class="form-control" placeholder="Enter username" name="phone">
+        <input type="text" class="form-control" placeholder="Enter Phone" formControlName="phone">
       </div>
       <div class="form-group">
         <label for="uname">Zipcode:</label>
-        <input type="text" class="form-control" placeholder="Enter username" name="zipcode">
+        <input type="text" class="form-control" placeholder="Enter Zipcode" formControlName="zipcode">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary">Submit</button>
     </form>
     </div>
   </div>
