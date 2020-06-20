@@ -13,13 +13,23 @@ import {AppState} from './../../app.state';
 export class EmployeeListComponent implements OnInit {
 
   employees :Observable<Employee[]>;
+  isNewEmp : boolean = false;
 
   constructor(private store:Store<AppState>) { 
     this.employees = store.select('employee');
-    console.log(this.employees);
   }
 
   ngOnInit() {
+  }
+
+  openPopup():void{
+    let modal = document.getElementById("myModal");
+    modal.style.display = "block";
+  }
+
+  closePopup():void{
+    let modal = document.getElementById("myModal");
+    modal.style.display = "none";
   }
 
 }

@@ -1,5 +1,8 @@
 <div class="container">
   <h3 class="text-center mt-5">Employee Details</h3>
+  <div>
+    <img src="../../../assets/plus.png" alt="Add Employee" height="30px" width="30px" (click)="openPopup()">
+  </div>
   <table class="table table-bordered mt-4">
     <thead>
       <tr>
@@ -7,6 +10,7 @@
         <th>Email</th>
         <th>Contact No</th>
         <th>Zipcode</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -15,9 +19,35 @@
         <td>{{employee.email}}</td>
         <td>{{employee.phone}}</td>
         <td>{{employee.zipcode}}</td>
+        <td>Edit | Delete</td>
       </tr>
       
       
     </tbody>
   </table>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closePopup()">&times;</span>
+      <h2>Create Employee</h2>
+      <form >
+      <div class="form-group">
+        <label for="uname">Name:</label>
+        <input type="text" class="form-control" placeholder="Enter username" name="uname">
+      </div>
+      <div class="form-group">
+        <label for="uname">Email:</label>
+        <input type="text" class="form-control" placeholder="Enter username" name="email">
+      </div>
+      <div class="form-group">
+        <label for="uname">Contact No:</label>
+        <input type="text" class="form-control" placeholder="Enter username" name="phone">
+      </div>
+      <div class="form-group">
+        <label for="uname">Zipcode:</label>
+        <input type="text" class="form-control" placeholder="Enter username" name="zipcode">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+  </div>
 </div>
